@@ -38,28 +38,55 @@
 
 # root.mainloop()
 
+# from tkinter import *
+# root = Tk()
+# root.geometry("455x233")
+# root.title("Scrollbar")
+# # For connecting scroll bar to a widget
+# # 1. widget(vscrollcommand = scrollbar.set)
+# # 2. scrollbar.config(command=widget.yview)
+
+# scrollbar = Scrollbar(root) #Used to create a scrollbar
+# scrollbar.pack(side=RIGHT, fill=Y) #Packing the scrollbar
+
+# listbox = Listbox(root, yscrollcommand = scrollbar.set) 
+# for i in range(344):
+#     listbox.insert(END, f"Item {i}")
+
+# listbox.pack(fill=BOTH) 
+
+# text = Text(root, yscrollcommand=scrollbar.set) #Creates a area to write text, just like notepad
+# text.pack(fill=BOTH)
+
+# scrollbar.config(command=text.yview) #assigns the scrollbar to that widget
+
+# root.mainloop()
+
 from tkinter import *
 root = Tk()
+
 root.geometry("455x233")
-root.title("Scrollbar")
-# For connecting scroll bar to a widget
-# 1. widget(vscrollcommand = scrollbar.set)
-# 2. scrollbar.config(command=widget.yview)
+root.title("Status bar")
 
-scrollbar = Scrollbar(root) #Used to create a scrollbar
-scrollbar.pack(side=RIGHT, fill=Y) #Packing the scrollbar
-
-listbox = Listbox(root, yscrollcommand = scrollbar.set) 
-for i in range(344):
-    listbox.insert(END, f"Item {i}")
-
-listbox.pack(fill=BOTH) 
-
-text = Text(root, yscrollcommand=scrollbar.set) #Creates a area to write text, just like notepad
-text.pack(fill=BOTH)
-
-scrollbar.config(command=text.yview) #assigns the scrollbar to that widget
+# The bar at the bottom is called status bar
+def upload():
+    statusvar.set("busy")
+    sbar.update()
+    import time
+    time.sleep(2)
+    statusvar.set("ready now")
+#Creating a status bar
+statusvar = StringVar()
+statusvar.set("Ready")
+sbar = Label(root, textvariable=statusvar, relief=SUNKEN, anchor=W)
+sbar.pack(side=BOTTOM, fill=X)
+Button(root, text="Upload", command=upload).pack()
 
 root.mainloop()
 
-#  Videos - 21, 22, 23
+
+
+
+
+#  Videos - 21, 22, 23, 25.
+#Video 24 after completing exercise 2
