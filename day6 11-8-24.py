@@ -63,25 +63,53 @@
 
 # root.mainloop()
 
+# from tkinter import *
+# import tkinter.messagebox as tmsg
+# root = Tk()
+# root.geometry("455x233")
+# root.title("Sliders in tkinter")
+
+# def get_money():
+#     print(f"we have credited {myslider2.get()} dollars to your account") #used to get the value of the slider
+#     tmsg.showinfo("Money credited",f"we have credited {myslider2.get()} dollars to your account")
+# # myslider = Scale(root, from_=0, to=455) #Used to make a vertical slider(number)
+# # myslider.pack()
+# Label(root, text="How much money do you want?").pack()
+# myslider2 = Scale(root, from_=0, to=100, orient=HORIZONTAL, tickinterval=10) #Used to make a horizontal slider(number)
+# myslider2.set(32) #Used to set a default value for the slider
+# myslider2.pack()
+
+# Button(root, text="Get money!", pady=10, command=get_money).pack()
+
+
+# root.mainloop()
+#quiz -  Make a slider to get customer experience and write it in a file(0 - 10) with the name of person and display a thank you message.
 from tkinter import *
-import tkinter.messagebox as tmsg
+import tkinter.messagebox as tmg
+def ty():
+    print(reviewentry.get())
+    if reviewentry.get()<5:
+        tmg.showinfo("thank you",f"Thank you {nameval.get()} for the review, please let us know if we can make any improvements. Our email - xyz@gmail.com")
+    else:
+        tmg.showinfo("thank you",f"Thank you {nameval.get()} for the review, we are glad to know that you liked our food!")
 root = Tk()
-root.geometry("455x233")
-root.title("Sliders in tkinter")
+root.geometry("350x333")
+root.title("Food review")
 
-def get_money():
-    print(f"we have credited {myslider2.get()} dollars to your account") #used to get the value of the slider
-    tmsg.showinfo("Money credited",f"we have credited {myslider2.get()} dollars to your account")
-# myslider = Scale(root, from_=0, to=455) #Used to make a vertical slider(number)
-# myslider.pack()
-Label(root, text="How much money do you want?").pack()
-myslider2 = Scale(root, from_=0, to=100, orient=HORIZONTAL, tickinterval=10) #Used to make a horizontal slider(number)
-myslider2.set(32) #Used to set a default value for the slider
-myslider2.pack()
+Label(root, text="Review for food", font="verdana 20 bold").grid(row=0, column=1)
+Label(root, text="Name", font="comicsansms 10", padx=20).grid(row=1, column=0, pady=15)
+Label(root, text="Rating", font="comicsansms 10", padx=20).grid(row=2, column=0, pady=5)
 
-Button(root, text="Get money!", pady=10, command=get_money).pack()
+nameval = StringVar()
 
+nameentry = Entry(root,  textvariable=nameval)
+nameentry.grid(row=1, column=1)
+reviewentry = Scale(root, from_=0, to=10, orient=HORIZONTAL, tickinterval=1, length=150)
+reviewentry.set(5)
+reviewentry.grid(row=2, column=1)
+
+Button(text="Submit", command=ty).grid(row=4, column=1, pady=30)
 
 root.mainloop()
-#quiz -  Make a slider to get customer experience and write it in a file(0 - 10) with the name of person and display a thank you message.
+
 # # Videos - 18, 19, 20

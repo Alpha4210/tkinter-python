@@ -1,2 +1,2 @@
 
-i2 = Entry(root, textvariable=a)
+#quiz -  Make a slider to get
