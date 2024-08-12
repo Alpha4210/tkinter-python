@@ -1,2 +1,2 @@
-nu
-# mymenu.add_command(label="exit", command=quit)
+
+i2 = Entry(root, textvariable=a)
