@@ -1,24 +1,28 @@
-# from tkinter import *
-# import tkinter.messagebox as tmsg
-# root = Tk()
-# root.geometry("455x233")
-# root.title("Radiobutton")
-# def order():
-#     tmsg.showinfo("Order recieved", f"We have recieved your order for {var.get()}. thanks for ordering")
-# var = IntVar()
-# # var.set(1) #used to set a value to a variable.
-# Label(root, text="What would you like to have?", justify=LEFT, padx=14, font="lucida 19 bold").pack()
+from tkinter import *
+import tkinter.messagebox as tmsg
+root = Tk()
+root.geometry("455x233")
+root.title("Radiobutton")
+def order():
+    tmsg.showinfo("Order recieved", f"We have recieved your order for {var.get()}. thanks for ordering")
+var = IntVar()
+# var.set(1) #used to set a value to a variable.
+Label(root, text="What would you like to have?", justify=LEFT, padx=14, font="lucida 19 bold").pack()
 
 # radio = Radiobutton(root, text="Dosa", padx=14, variable=var, value=1).pack(anchor=W) #Used to create a radio button
 # radio = Radiobutton(root, text="Idli", padx=14, variable=var, value=2).pack(anchor=W)
 # radio = Radiobutton(root, text="Paratha", padx=14, variable=var, value=3).pack(anchor=W)
 # radio = Radiobutton(root, text="Samosa", padx=14, variable=var, value=4).pack(anchor=W)
 
-# #Small task 1 - Try to create these radiobutton using for loop
+#Small task 1 - Try to create these radiobutton using for loop
 
-# Button(text="order now", command=order).pack()
+l1 = ["Dosa", "Idli", "Paratha", "Samosa"]
+for i in range(4):
+    Radiobutton(root, text=l1[i], padx=14, variable=var, value=i+1).pack(anchor=W)
 
-# root.mainloop()
+Button(text="order now", command=order).pack()
+
+root.mainloop()
 
 # from tkinter import *
 # root = Tk()
@@ -62,27 +66,27 @@
 
 # root.mainloop()
 
-from tkinter import *
-root = Tk()
+# from tkinter import *
+# root = Tk()
 
-root.geometry("455x233")
-root.title("Status bar")
+# root.geometry("455x233")
+# root.title("Status bar")
 
-# The bar at the bottom is called status bar
-def upload():
-    statusvar.set("busy")
-    sbar.update()
-    import time
-    time.sleep(2)
-    statusvar.set("ready now")
-#Creating a status bar
-statusvar = StringVar()
-statusvar.set("Ready")
-sbar = Label(root, textvariable=statusvar, relief=SUNKEN, anchor=W)
-sbar.pack(side=BOTTOM, fill=X)
-Button(root, text="Upload", command=upload).pack()
+# # The bar at the bottom is called status bar
+# def upload():
+#     statusvar.set("busy")
+#     sbar.update()
+#     import time
+#     time.sleep(2)
+#     statusvar.set("ready now")
+# #Creating a status bar
+# statusvar = StringVar()
+# statusvar.set("Ready")
+# sbar = Label(root, textvariable=statusvar, relief=SUNKEN, anchor=W)
+# sbar.pack(side=BOTTOM, fill=X)
+# Button(root, text="Upload", command=upload).pack()
 
-root.mainloop()
+# root.mainloop()
 
 
 
