@@ -20,22 +20,23 @@
 #     window.createbutton("Yoooooo")
 #     window.mainloop() 
 
-#Quick quiz 1 - Create a custom class.
+# Quick quiz 1 - Create a custom class. - use in my future project
 
-from tkinter import *
-root = Tk()
-root.geometry("655x444")
-root.title("title of my GUI")
-root.wm_iconbitmap("download.ico") #Used to set a favicon for the GUI
-# root.configure(background="red") #Used to change background of GUI 
 
-width = root.winfo_screenwidth()
-height = root.winfo_screenheight()
+# from tkinter import *
+# root = Tk()
+# root.geometry("655x444")
+# root.title("title of my GUI")
+# root.wm_iconbitmap("download.ico") #Used to set a favicon for the GUI
+# # root.configure(background="red") #Used to change background of GUI 
 
-print(f"{width}x{height}")
-Button(text="Close", command=root.destroy).pack() #Used to quit an application
+# width = root.winfo_screenwidth()
+# height = root.winfo_screenheight()
 
-root.mainloop()
+# print(f"{width}x{height}")
+# Button(text="Close", command=root.destroy).pack() #Used to quit an application
+
+# root.mainloop()
 
 # Further code in calculator_project.py
 
